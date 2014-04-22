@@ -6,6 +6,9 @@ target = open(filename, 'w')
 
 season = raw_input("Season Number?: ")
 episodes = raw_input("Number of episodes?: ")
+start_num = raw_input("Episode to start counting from (Leave blank for default): ")
+if len(start_num) == 0:
+	start_num = 1
 
 print 'Formatting season...'
 s = "S"
@@ -14,12 +17,11 @@ if(season < 10):
 season = s + season + " "
 
 print 'Concatenating strings...'
-for i in range(int(episodes)):
-	ep = i + 1 
+for i in range(int(start_num), int(episodes) + 1):
 	e = "E"
-	if(ep < 10):
+	if(i < 10):
 		e += "0"
-	target.write(season + e + str(ep))
+	target.write(season + e + str(i))
 	target.write("\n")
 
 print 'Closing File...'
