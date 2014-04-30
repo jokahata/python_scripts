@@ -1,8 +1,8 @@
 from sys import argv
 if len(argv) == 1:
+	filename = 'output_epGen'
 	print 'No filename specified'
-	print 'Generating output file "epGen_out"'
-	filename = 'epGen_out'
+	print 'Generating output file %r...' % filename
 else:
 	script, filename = argv
 print 'Opening the file %r...' % filename
@@ -28,7 +28,7 @@ if (len(season) == 0):
 	s += "1"
 elif(season < 10):
 	s += "0"
-season = '()' + s + season + " "
+season = '() ' + s + season + " "
 
 print 'Writing to file %r...' % filename
 for i in range(int(start_num), int(episodes) + 1):
