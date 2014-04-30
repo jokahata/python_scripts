@@ -1,6 +1,10 @@
 from sys import argv
-script, filename = argv
-
+if len(argv) == 1:
+	print 'No filename specified'
+	print 'Generating output file "epGen_out"'
+	filename = 'epGen_out'
+else:
+	script, filename = argv
 print 'Opening the file %r...' % filename
 target = open(filename, 'w')
 is_valid_range = False
