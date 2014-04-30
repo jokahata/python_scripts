@@ -11,8 +11,8 @@ while(not is_valid_range):
 	episodes = raw_input("Total number of episodes?: ")
 	if len(start_num) == 0:
 		start_num = 1
-	if (start_num > episodes):
-		print 'Error: You starting passed the number of episodes'
+	if (int(start_num) > int(episodes)):
+		print 'Error: You are starting passed the number of episodes'
 	else:
 		is_valid_range = True
 	if (start_num == episodes):
@@ -24,7 +24,7 @@ if (len(season) == 0):
 	s += "1"
 elif(season < 10):
 	s += "0"
-season = s + season + " "
+season = '()' + s + season + " "
 
 print 'Writing to file %r...' % filename
 for i in range(int(start_num), int(episodes) + 1):
