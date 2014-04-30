@@ -1,12 +1,12 @@
 from sys import argv
 #short is a variable to skip through to processing
-
-
+short = False
+season = ""
 #python epGenerator.py <number or filename>
 if len(argv) == 2:
 	#Pass in number
 	try:
-		episodes = int(s)
+		episodes = int(argv[1])
 		short = True
 	#Pass in string for filename
 	except ValueError:
@@ -36,9 +36,9 @@ while(True):
 	if short:
 		start_num = 1
 		break;
-	if (is_valid_range):
+	if is_valid_range:
 		break;
-	if (season is None):
+	if len(season) == 0:
 		season = raw_input("Season Number?: ")
 
 	start_num = raw_input("Episode to start counting from (Leave blank for default): ")
